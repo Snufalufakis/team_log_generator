@@ -1,0 +1,27 @@
+{
+  "name": "team-log-generator",
+  "version": "1.0.0",
+  "description": "You can do it",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "jest": "^28.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Snufalufakis/team_log_generator.git"
+  },
+  "author": "Michael",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Snufalufakis/team_log_generator/issues"
+  },
+  "homepage": "https://github.com/Snufalufakis/team_log_generator#readme"
+}
