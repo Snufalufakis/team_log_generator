@@ -1,22 +1,17 @@
-const Engineer = require('..lib/engineer');
+const Engineer = require("../lib/Engineer");
 
-test("Give Engineer a name to test", () => {
-    const newEmployee = 9000;
-    const e = new Employee("Bodega", newEmployee);
-    expect(e.name).toBe(string);
+test("Give Engineer a GitHub username to test", () => {
+    const engineerTest = "User@gitHub";
+    const newEngineer = new Engineer("Manny", 30, "MannyBodega@BestBodega.com", engineerTest);
+    expect(newEngineer.github).toBe(engineerTest);
   });
-  test("Give the engineer a id to test", () => {
-    const newEmployee = 9000;
-    const e = new Employee("Bodega", newEmployee);
-    expect(e.id).toBe(newEmployee);
+  test("Give the engineer a role to test", () => {
+    const engineerTest = "Engineer";
+    const newEngineer = new Engineer("Manny", 30, "MannyBodega@BestBodega.com", "User@gitHub");
+    expect(newEngineer.getRole()).toBe(engineerTest);
   });
-  test("Give the engineer a email to test", () => {
-    const newEmployee = 9000;
-    const e = new Employee("Bodega", newEmployee);
-    expect(e.email).toBe(newEmployee);
-  });
-  test("Give the engineer a GitHub to test", () => {
-    const newEmployee = 9000;
-    const e = new Employee("Bodega", newEmployee);
-    expect(e.girhub).toBe(newEmployee);
+  test("Test the engineer github is working", () => {
+    const engineerTest = "User@gitHub";
+    const newEngineer = new Engineer("Manny", 30, "MannyBodega@BestBodega.com", engineerTest);
+    expect(newEngineer.getGithub()).toBe(engineerTest);
   });
