@@ -1,11 +1,11 @@
-const inquire = require("inquirer");
+const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path");
 //classes
 const Manger = require("./lib/manger");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
-const inquirer = require("inquirer");
+
 // Repeated questions  for all Employee classes
 function questionsForEmployees() {
   inquirer
@@ -97,3 +97,32 @@ function createMoreEmployees() {
     });
 }
 questionsForEmployees();
+
+// Populate Html template with employee roles.
+const  newIntern = intern => {
+  let template = fs.readFile(path.resolve(), "utf8");
+  let internHTML = ""
+  internalHTML = internalHTML + template.replace(/{{name}}/g, intern.getName())
+    .replace(/{{}}/g, intern.getRole())
+    .replace(/{{}}/g, intern.getRole())
+    .replace(/{{}}/g, intern.getRole())
+    .replace(/{{}}/g, intern.getRole())
+};
+const  newIntern = intern => {
+  let template = fs.readFile(path.resolve(), "utf8");
+  let internHTML = ""
+  internalHTML = internalHTML + template.replace(/{{name}}/g, intern.getName())
+    .replace(/{{}}/g, intern.getRole())
+    .replace(/{{}}/g, intern.getRole())
+    .replace(/{{}}/g, intern.getRole())
+    .replace(/{{}}/g, intern.getRole())
+};
+const  newIntern = intern => {
+  let template = fs.readFile(path.resolve(), "utf8");
+  let internHTML = ""
+  internalHTML = internalHTML + template.replace(/{{name}}/g, intern.getName())
+    .replace(/{{}}/g, intern.getRole())
+    .replace(/{{}}/g, intern.getRole())
+    .replace(/{{}}/g, intern.getRole())
+    .replace(/{{}}/g, intern.getRole())
+};
