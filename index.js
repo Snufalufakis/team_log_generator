@@ -1,12 +1,12 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path");
-const templateDir ="./template/"
+const templateDir = "./template/";
 //classes
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
-let newMembers = ""
+let newMembers = "";
 
 // Repeated questions  for all Employee classes
 function questionsForEmployees() {
@@ -116,7 +116,6 @@ const newIntern = (intern) => {
       .replace(/{{ id }}/g, intern.getId())
       .replace(/{{ school }}/g, intern.getSchool());
   newMembers = newMembers + internHtml;
-  console.log(internHtml);
 };
 const newEngineer = (engineer) => {
   let template = fs.readFileSync(
@@ -133,7 +132,6 @@ const newEngineer = (engineer) => {
       .replace(/{{ id }}/g, engineer.getId())
       .replace(/{{ github }}/g, engineer.getGithub());
   newMembers = newMembers + engineerHtml;
-  console.log(engineerHtml);
 };
 const newManager = (manager) => {
   let template = fs.readFileSync(
@@ -150,35 +148,35 @@ const newManager = (manager) => {
       .replace(/{{ id }}/g, manager.getId())
       .replace(/{{ officeNumber }}/g, manager.getOfficeNumber());
   newMembers = newMembers + managerHtml;
-  console.log(managerHtml);
 };
 // Functions to create each new Constructor
 function createManager(name, id, email, officeNumber) {
-  const manager = new Manager(name, id, email, officeNumber)
-  newManager(manager)
+  const manager = new Manager(name, id, email, officeNumber);
+  newManager(manager);
 }
 
 function createEngineer(name, id, email, github) {
-  const engineer = new Engineer(name, id, email, github)
-  newEngineer(engineer)
+  const engineer = new Engineer(name, id, email, github);
+  newEngineer(engineer);
 }
 
 function createIntern(name, id, email, school) {
-  const intern = new Intern(name, id, email, school)
-  newIntern(intern)
+  const intern = new Intern(name, id, email, school);
+  newIntern(intern);
 }
 
 // creating the index.html in the dist folder
 function createMain() {
-  let mainTemplate = fs.readFileSync(path.resolve(templateDir, "main.html"), "utf8")
-  var mainHtml = ""
-  mainHtml = mainHtml + mainTemplate.replace(/{{ fillIn }}/g, newMembers)
-  let file = path.join(__dirname, 'dist', "/index.html");
-  console.log(file);
+  let mainTemplate = fs.readFileSync(
+    path.resolve(templateDir, "main.html"),
+    "utf8"
+  );
+  var mainHtml = "";
+  mainHtml = mainHtml + mainTemplate.replace(/{{ fillIn }}/g, newMembers);
+  let file = path.join(__dirname, "dist", "/index.html");
   fs.writeFile(file, mainHtml, function (err) {
-      if (err) {
-          throw new Error(err)
-      }
-      console.log('done writing file')
-  })
+    if (err) {
+      throw new Error(err);
+    }
+  });
 }
